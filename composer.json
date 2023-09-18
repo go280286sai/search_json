@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "go280286sai\\search_json\\SearchJsonServiceProvider"
+                "go280286sai\\search_json\\Providers\\SearchProvider"
             ]
         }
     }
