@@ -7,10 +7,18 @@ use Illuminate\Http\Request;
 
 class SearchJsonController extends Controller
 {
-    public function index()
+    /**
+     * @param Request $request
+     * @return array
+     * @author Aleksander Storchak <go280286sai@gmail.com>
+     */
+    public function index(Request $request): array
     {
+        $request->validate([
+            'text' => 'required|string'
+        ]);
+        $text = htmlspecialchars($request->input('text'));
 
-       Index_search::create_search();
-        return 'ok';
+        return Index_search::search_text($text);
     }
 }

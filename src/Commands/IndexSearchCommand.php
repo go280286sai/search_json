@@ -7,21 +7,21 @@ use go280286sai\search_json\Models\Index_search;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
 
-class SearchRemoveCommand extends Command
+class IndexSearchCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'search:remove';
+    protected $signature = 'search:run';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Add name table for remove from search';
+    protected $description = 'Start to indexing tables';
 
     /**
      * Execute the console command.
@@ -29,10 +29,12 @@ class SearchRemoveCommand extends Command
     public function handle(): void
     {
         try {
-            $title = $this->ask('Add table name for remove from search');
-            if (!is_null($title)) {
-                Index_search::remove($title);
-                LogMessage::send('Add table name: ' . $title . ' for remove of date:' . Carbon::now());
+            $title = $this->ask('Start to indexing tables? y/n');
+            if ($title == 'y' || $title == 'yes') {
+                Index_search::create_search();
+                LogMessage::send('Start to indexing of date:' . Carbon::now());
+            } elseif ($title == 'n' || $title == 'no') {
+                $this->info('If need to run indexing tables than select y/yes');
             } else {
                 LogMessage::send('Arg is empty of date:' . Carbon::now());
                 throw new \Exception('Arg is empty');

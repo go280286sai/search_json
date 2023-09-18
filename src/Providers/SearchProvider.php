@@ -2,6 +2,8 @@
 
 namespace go280286sai\search_json\Providers;
 
+use go280286sai\search_json\Commands\ClearAllCommand;
+use go280286sai\search_json\Commands\IndexSearchCommand;
 use go280286sai\search_json\Commands\SearchCommand;
 use go280286sai\search_json\Commands\SearchRemoveCommand;
 use Illuminate\Support\ServiceProvider;
@@ -26,7 +28,9 @@ class SearchProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 SearchCommand::class,
-                SearchRemoveCommand::class
+                SearchRemoveCommand::class,
+                IndexSearchCommand::class,
+                ClearAllCommand::class
             ]);
         }
     }

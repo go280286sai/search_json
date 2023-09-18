@@ -3,7 +3,7 @@
         'name' => 'go280286sai/search_json',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '350a7ba6856b1ad2d88d4d71bd7e49af5c234d2c',
+        'reference' => '3dfbf28e2973b8ff9b8cd632417f931d900e9b25',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -106,7 +106,7 @@
         'go280286sai/search_json' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '350a7ba6856b1ad2d88d4d71bd7e49af5c234d2c',
+            'reference' => '3dfbf28e2973b8ff9b8cd632417f931d900e9b25',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

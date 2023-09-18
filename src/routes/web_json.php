@@ -16,4 +16,4 @@
 use go280286sai\search_json\Http\Controllers\SearchJsonController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/search', [SearchJsonController::class, 'index']);
+Route::post('/search', [SearchJsonController::class, 'index']);
